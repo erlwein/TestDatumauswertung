@@ -1,0 +1,94 @@
+﻿<Window x:Class="TestDatumWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestDatumWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" AllowsTransparency="True" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" MouseLeftButtonDown="dragMe">
+    <Border CornerRadius="30" BorderBrush="White">
+        <Border CornerRadius="35" DragEnter="Border_DragEnter">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#FFBED9EF" Offset="0.0"/>
+                    <GradientStop Color="#FF327DC8" Offset="0.5"/>
+                    <GradientStop Color="#FF0A1015" Offset="1.0"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid>
+                <DataGrid Name="dtGridView" Margin="55,84,290,84"/>
+                <DockPanel>
+                    <ToolBarTray Height="54" Margin="0,24,0,386" DockPanel.Dock="Top">
+                        <ToolBar HorizontalAlignment="Left" Height="50" Margin="25,-2,0,0" VerticalAlignment="Top" Width="760" RenderTransformOrigin="0.25,0.52">
+
+                            <Button x:Name="BtnOpen" Click="BtnOpen_Click">
+                                <Image Source="/Bilder/arquivo.ico"/>
+                            </Button>
+                            <Separator/>
+                            <Button x:Name="btnMan" Click="btnMan_Click">
+                                <Image Source="/Bilder/man.png"/>
+                            </Button>
+                            <Separator/>
+                            <Button x:Name="BtnFrau" Click="BtnFrau_Click">
+                                <Image Source="/Bilder/frau.png"/>
+                            </Button>
+                            <Button x:Name="btn_Email" Click="btn_Email_Click">
+                                <Image Source="/Bilder/email.png"/>
+                            </Button>
+                            <Button x:Name="btn_News" Click="btn_News_Click">
+                                <Image Source="/Bilder/news.ico"/>
+                            </Button>
+                            <Button x:Name="btn_Alter" Click="btn_Alter_Click">
+                                <Image Source="/Bilder/sair.png"/>
+                            </Button>
+                            <Button x:Name="btn_zeiten" Click="btn_zeiten_Click">
+                                <Image Source="/Bilder/tex.ico"/>
+                            </Button>
+                            <Button x:Name="btn_off" Click="btn_off_Click" ToolTip="Close">
+                                <Image Source="/Bilder/desli.png" RenderTransformOrigin="9.48,0.59"/>
+                            </Button>
+                        </ToolBar>
+
+                    </ToolBarTray>
+
+                </DockPanel>
+
+                <Border Height="50" CornerRadius="20" Background="#5f5fff" Margin="545,200,45,200">
+                    <Border.Effect>
+                        <DropShadowEffect Color="White" BlurRadius="100"/>
+                    </Border.Effect>
+
+                </Border>
+
+
+
+                <TextBox x:Name="tb_1" FontWeight="DemiBold" FontSize="15" HorizontalAlignment="Left" Margin="100,386,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="131" RenderTransformOrigin="0.208,0.557" Height="22" ToolTip="Geben Sie einen Städtenamen ein"/>
+                <Label Content="Stadt" HorizontalAlignment="Left" Margin="55,382,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                <Button  HorizontalAlignment="Left" Margin="231,386,0,0" VerticalAlignment="Top" Click="Button_Click_1" Height="22" Width="29"  Background="Transparent" BorderThickness="0">
+                    <Image Source="/Bilder/suchen.ico" RenderTransformOrigin="0.5,0.5" >
+                        <Image.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform AngleY="-1.414"/>
+                                <RotateTransform/>
+                                <TranslateTransform Y="-0.309"/>
+                            </TransformGroup>
+                        </Image.RenderTransform>
+                    </Image>
+                </Button>
+                <TextBlock HorizontalAlignment="Left" Margin="605,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Name="tbl_1" FontWeight="Bold" Foreground="White"/>
+                <Button x:Name="btnCloseRed" Height="20" ToolTip="Close"  Width="20" Margin="745,0,35,430" Background="Transparent" BorderThickness="0" Click="btnCloseRed_Click">
+                    <Image Source="/Bilder/red.png"/>
+                </Button>
+                <Button x:Name="btnCloseGreen"  Height="20" ToolTip="minimize"  Width="20" Margin="700,0,35,430" Background="Transparent" BorderThickness="0" Click="btnCloseGreen_Click">
+                    <Image Source="/Bilder/green.png"/>
+                </Button>
+
+
+
+
+            </Grid>
+        </Border>
+
+    </Border>
+</Window>
